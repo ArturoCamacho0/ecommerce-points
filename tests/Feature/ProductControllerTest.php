@@ -26,6 +26,7 @@ class ProductControllerTest extends TestCase
         $response->assertJsonCount(5);
     }
 
+
     public function test_create_new_product()
     {
         $data = [
@@ -38,6 +39,7 @@ class ProductControllerTest extends TestCase
         $response->assertHeader('content-type', 'application/json');
         $this->assertDatabaseHas('products', $data);
     }
+
 
     public function test_update_product()
     {
@@ -54,6 +56,7 @@ class ProductControllerTest extends TestCase
         $response->assertHeader('content-type', 'application/json');
     }
 
+
     public function test_show_product()
     {
         /** @var Product $product */
@@ -64,6 +67,7 @@ class ProductControllerTest extends TestCase
         $response->assertSuccessful();
         $response->assertHeader('content-type', 'application/json');
     }
+
 
     public function test_delete_product()
     {
